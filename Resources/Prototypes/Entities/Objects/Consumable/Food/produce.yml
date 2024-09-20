@@ -357,7 +357,7 @@
   - type: Item
     sprite: Objects/Specific/Hydroponics/banana.rsi
     heldPrefix: peel
-  - type: Slippery
+  # - type: Slippery # No more slipping! *Cursed mod
   - type: StepTrigger
     intersectRatio: 0.2
   - type: CollisionWake
@@ -429,7 +429,7 @@
   - type: Item
     sprite: Objects/Specific/Hydroponics/mimana.rsi
     heldPrefix: peel
-  - type: Slippery
+  # - type: Slippery # No more slipping! *Cursed mod
     slipSound:
       path: /Audio/Effects/slip.ogg
       params:
@@ -446,7 +446,7 @@
   - type: Item
     sprite: Objects/Materials/materials.rsi
     heldPrefix: peel
-  - type: Slippery
+  # - type: Slippery # No more slipping! *Cursed mod
 
 - type: entity
   name: carrot

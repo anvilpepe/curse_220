@@ -1,0 +1,15 @@
+- type: roleLoadout
+  id: JobSecurityOfficerShipyard
+  groups:
+  - Inventory # Corvax-Loadouts
+  - SecurityHead
+  - SecurityJumpsuit
+  - SecurityBackpack
+  - SecurityOuterClothing
+  - SecurityShoes
+  - SecurityPDA
+  - SecurityBelt
+  - SurvivalSecurity
+  - Trinkets
+  - SecurityStar
+  - GroupSpeciesBreathToolSecurity
