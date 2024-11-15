@@ -1,0 +1,81 @@
+- type: entity
+  id: SuperReinforcedPlasmaWindow
+  name: сверхпрочное плазменное окно
+  parent: Window
+  components:
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _cursed/Structures/Windows/plasma_sr.rsi
+  - type: Icon
+    sprite: _cursed/Structures/Windows/plasma_sr.rsi
+  - type: Repairable
+    fuelCost: 50
+    doAfterDelay: 6
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: SRGlass
+  - type: RCDDeconstructable
+    cost: 60
+    delay: 6
+    fx: EffectRCDDeconstruct6
+  - type: ExplosionResistance
+    damageCoefficient: 0.005
+    worn: false
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1500 #more than plastitanium now
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+    - trigger:
+        !type:DamageTrigger
+        damage: 750
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ShardGlassPlasma:
+            min: 4
+            max: 6
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: IconSmooth
+    base: psrwindow
+  - type: Construction
+    graph: Window
+    node: plasmaSRWindow
+  - type: Appearance
+  - type: DamageVisuals
+    thresholds: [5, 10, 20]
+    damageDivisor: 3
+    trackAllDamage: true
+    damageOverlay:
+      sprite: Structures/Windows/cracks.rsi
+
+
+- type: construction
+  name: сверхпрочное плазменное окно
+  description: Что вы собрались этим изолировать? Ядерную боеголовку?
+  id: plasmaSRWindow
+  graph: Window
+  startNode: start
+  targetNode: plasmaSRWindow
+  category: construction-category-structures
+  canBuildInImpassable: true
+  conditions:
+    - !type:EmptyOrWindowValidInTile
+    - !type:NoWindowsInTile
+  icon:
+    sprite: _cursed/Structures/Windows/plasma_sr.rsi
+    state: full
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+
