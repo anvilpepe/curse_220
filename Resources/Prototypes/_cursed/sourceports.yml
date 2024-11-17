@@ -1,0 +1,29 @@
+- type: sourcePort # yes im pretty smart
+  id: Pressed0
+  name: signal-port-name-pressed
+  description: signal-port-description-pressed
+  defaultLinks: [ Toggle, Trigger, Timer ]
+
+- type: sourcePort
+  id: Pressed1
+  name: signal-port-name-pressed
+  description: signal-port-description-pressed
+  defaultLinks: [ Toggle, Trigger, Timer ]
+
+- type: sourcePort
+  id: Pressed2
+  name: signal-port-name-pressed
+  description: signal-port-description-pressed
+  defaultLinks: [ Toggle, Trigger, Timer ]
+
+- type: sourcePort
+  id: Pressed3
+  name: signal-port-name-pressed
+  description: signal-port-description-pressed
+  defaultLinks: [ Toggle, Trigger, Timer ]
+
+- type: sourcePort
+  id: Pressed4
+  name: signal-port-name-pressed
+  description: signal-port-description-pressed
+  defaultLinks: [ Toggle, Trigger, Timer ]

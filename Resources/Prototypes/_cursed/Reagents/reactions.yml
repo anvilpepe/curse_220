@@ -14,6 +14,8 @@
   reactants:
     Ammonia:
       amount: 4
+    Oxygen:
+      amount: 7
     Platinum:
       amount: 1
       catalyst: true
@@ -23,6 +25,7 @@
 
 - type: reaction
   id: NitricAcid
+  minTemp: 500.15
   reactants:
     NitrogenDioxide:
       amount: 3
@@ -31,3 +34,14 @@
   products:
     NitricAcid: 2
     NitrousOxide: 1
+
+- type: reaction
+  id: HydrofluoricAcid
+  minTemp: 773.15
+  reactants:
+    Hydrogen:
+      amount: 1
+    Fluorine:
+      amount: 1
+  products:
+    HydrofluoricAcid: 1
