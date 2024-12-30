@@ -1,0 +1,23 @@
+- type: entity
+  parent: OreProcessorIndustrialMachineCircuitboard
+  id: OreProcessorIndustrialUpgradedMachineCircuitboard
+  name: схема улучшенного промышленного переработчика руды
+  components:
+  - type: MachineBoard
+    prototype: OreProcessorIndustrial
+    stackRequirements:
+      MatterBin: 6
+      Manipulator: 18
+      ReinforcedGlass: 6
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: GasTurbineMachineCircuitboard
+  name: схема газового турбогенератора
+  components:
+  - type: MachineBoard
+    prototype: GasTurbine
+    stackRequirements:
+      Steel: 25
+      CableHV: 8
+      Cable: 2

@@ -2,7 +2,7 @@
   parent: BaseStructureDynamic
   id: HybtoniteChunk
   name: кусок гибтонита
-  description: Кусок гибтонита внушительных размеров. Если вы дочитали до сюда, то на вас костюм радиационной защиты.
+  description: Кусок гибтонита внушительных размеров. Если вы дочитали до сюда, то на вас надет костюм радиационной защиты.
   components:
     - type: Sprite
       sprite: _cursed/Structures/hybtonite_chunk.rsi

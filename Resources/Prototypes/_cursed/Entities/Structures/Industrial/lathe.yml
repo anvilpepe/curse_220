@@ -1,0 +1,28 @@
+- type: entity
+  parent: OreProcessor
+  id: OreProcessorIndustrialUpgraded
+  name: улучшенный промышленный переработчик руды
+  description: Улучшенный переработчик руды. У автора кончилась фантазия.
+  components:
+  - type: Sprite
+    sprite: _cursed/Structures/Industrial/ore_processor.rsi
+  - type: Machine
+    board: OreProcessorIndustrialUpgradedMachineCircuitboard
+  - type: Lathe
+    materialUseMultiplier: 1
+    timeMultiplier: 0.2
+    staticRecipes:
+      - SheetSteel
+      - SheetGlass1
+      - SheetRGlass
+      - SheetPlasma1
+      - SheetPGlass1
+      - SheetRPGlass1
+      - SheetPlasteel1
+      - SheetUranium1
+      - SheetUGlass1
+      - SheetRUGlass1
+      - IngotGold1
+      - IngotSilver1
+      - MaterialBananium1
+      - MaterialDiamond

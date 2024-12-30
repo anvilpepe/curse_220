@@ -1,0 +1,95 @@
+- type: entity
+  parent: [BaseMachine, ConstructibleMachine]
+  name: газовый турбогенератор
+  description: Газовая турбина. Газ крутит турбину, а турбина крутит генератор. Генератор вырабатывает электричество.
+  id: GasTurbine
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: AtmosUnsafeUnanchor
+    - type: AtmosDevice
+    - type: PipeRestrictOverlap
+    - type: DeviceNetwork
+      deviceNetId: AtmosDevices
+      receiveFrequencyId: AtmosMonitor
+      transmitFrequencyId: AtmosMonitor
+      sendBroadcastAttemptEvent: true
+      examinableAddress: true
+    - type: WiredNetworkConnection
+    - type: Tag
+      tags:
+        - Unstackable
+    - type: LightningTarget
+      priority: 1
+    - type: Rotatable
+    - type: Transform
+      noRot: false
+    - type: Sprite
+      sprite: _cursed/Structures/Energetics/turbines.rsi
+      state: plain-gas-turbine
+    - type: Appearance
+    - type: Anchorable
+    - type: GasTurbine
+      expectedVolumeEntry: 20
+      explosionPressure: 10000000
+    - type: PowerSupplier
+      supplyRate: 1000000
+      supplyRampRate: 1000000
+      supplyRampTolerance: 1000000
+      enabled: true
+    - type: NodeContainer
+      examinable: true
+      nodes:
+        inlet:
+          !type:PipeNode
+          nodeGroupID: Pipe
+          pipeDirection: North
+        outlet:
+          !type:PipeNode
+          nodeGroupID: Pipe
+          pipeDirection: South
+        output:
+          !type:CableDeviceNode
+          nodeGroupID: HVPower
+    - type: Electrified
+      onHandInteract: false
+      onInteractUsing: false
+      onBump: false
+      requirePower: true
+      highVoltageNode: output
+    - type: PowerMonitoringDevice
+      group: Generator
+      loadNode: output
+      sprite: Structures/Power/power.rsi
+      state: generator
+    - type: Pullable
+    - type: Damageable
+      damageContainer: StructuralInorganic
+      damageModifierSet: Metallic
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 600
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 300
+        behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalBreak
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            MachineFrameDestroyed:
+              min: 1
+              max: 1
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:PurgeTurbineContentsBehavior
+    - type: Machine
+      board: GasTurbineMachineCircuitboard
+    # - type: AmbientSound TODO
+    # - type: Construction TODO
