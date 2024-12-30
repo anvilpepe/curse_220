@@ -1,0 +1,9 @@
+- type: latheRecipe
+  parent: BaseGoldCircuitboardRecipe
+  id: OreProcessorIndustrialUpgradedMachineCircuitboard
+  result: OreProcessorIndustrialUpgradedMachineCircuitboard
+
+- type: latheRecipe
+  parent: BaseCheapCircuitboardRecipe
+  id: GasTurbineMachineCircuitboard
+  result: GasTurbineMachineCircuitboard
